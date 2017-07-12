@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import Toast from 'vue-toasted'
+import Vodal from 'vodal'
 import App from './App'
 import router from './router'
 import store from './store'
@@ -37,8 +38,10 @@ Vue.use(Toast, {
   })
   // 全局滤镜
 Object.keys(filters).forEach(key => {
-  Vue.filter(key, filters[key])
-})
+    Vue.filter(key, filters[key])
+  })
+  // 全局引入modal插件
+Vue.component(Vodal.name, Vodal)
 
 /* eslint-disable no-new */
 new Vue({

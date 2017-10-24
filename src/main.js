@@ -8,6 +8,8 @@ import App from './App'
 import router from './router'
 import store from './store'
 import * as filters from './filters'
+import 'vodal/common.css'
+import 'vodal/zoom.css'
 import './css/public.css'
 
 Vue.config.productionTip = false

@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import './common/configHttp.js'
+import deviceInfo from './common/deviceInfo'
 import Toast from 'vue-toasted'
 import Vodal from 'vodal'
 import App from './App'
@@ -13,7 +14,8 @@ import 'vodal/zoom.css'
 import './css/public.css'
 
 Vue.config.productionTip = false
-
+// 加入设备信息
+Vue.prototype.$deviceInfo = deviceInfo
 // 配置toast
 Vue.use(Toast, {
   position: 'top-center',

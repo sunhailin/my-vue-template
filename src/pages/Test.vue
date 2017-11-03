@@ -16,6 +16,7 @@ export default {
       this.$toasted.show('test')
       this.$store.dispatch('testAction')
       console.log(this.$http)
+      console.log(this.$deviceInfo)
     }
   }
 }

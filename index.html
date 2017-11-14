@@ -11,6 +11,21 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="format-detection" content="telephone=no">
   <meta name="format-detection" content="email=no">
+  <script type="text/javascript">
+  (function() {
+    updateFontSize();
+
+    function updateFontSize() {
+      var width = document.documentElement.getBoundingClientRect().width;
+      var fontSize = width / 10.8;
+      document.documentElement.style.fontSize = fontSize + "px";
+    }
+    window.onresize = function() {
+      updateFontSize();
+    };
+  })();
+
+  </script>
 </head>
 
 <body>

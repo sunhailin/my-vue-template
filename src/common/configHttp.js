@@ -23,10 +23,20 @@ axios.defaults.params = {
 // 拦截response 事先统一处理
 axios.interceptors.response.use(function(response) {
   // Do something with response data
-  return response
+  if (response.data.httpCode === 200) {
+    return response
+  } else {
+    return Promise.reject({
+      msg: response.data.msg,
+      data: response.data
+    })
+  }
 }, function(error) {
   // Do something with response error
-  return Promise.reject(error)
+  return Promise.reject({
+    msg: '网络错误',
+    err: error
+  })
 })
 // 把axios放到全局中
 Vue.prototype.$http = axios
